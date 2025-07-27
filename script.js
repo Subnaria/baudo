@@ -121,3 +121,15 @@ function animateAboutMessage() {
     });
   }, 3000);
 }
+
+// Anti-vol d'image : bloque le clic droit sur les images
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault();
+  }
+});
+
+console.log(
+  "%cAttention : Toute tentative d'attaque ou de vol de contenu sera signalée.",
+  "color: #00ccff; font-size: 1.2em;"
+);
