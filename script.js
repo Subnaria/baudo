@@ -126,12 +126,12 @@ function animateAboutMessage() {
 
 // Fonction pour mettre à jour le compteur d'abonnés
 function updateSubCount() {
-  fetch('https://socialcounts.org/youtube-live-subscriber-count/UCLVLCqbRs6E063eYdF0658w')
+  fetch('https://baudo-compt-abo.onrender.com/api/subscribers')
     .then(res => res.json())
     .then(data => {
       const subCount = document.getElementById('sub-count');
-      if (subCount && data && data.data && data.data.subscriberCount) {
-        subCount.textContent = "Abonnés : " + data.data.subscriberCount.toLocaleString('fr-FR');
+      if (subCount && data && data.subscriberCount) {
+        subCount.textContent = "Abonnés : " + Number(data.subscriberCount).toLocaleString('fr-FR');
       } else {
         subCount.textContent = "Abonnés : (erreur API)";
         console.log('API data:', data);
