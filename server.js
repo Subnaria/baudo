@@ -9,7 +9,7 @@ const CHANNEL_ID = 'UCw7b6r9uVFeReyFZ8Y_TpLw'; // @Dev_Baudo
 
 app.get('/api/subscribers', async (req, res) => {
   try {
-    const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${YOUTUBE_API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCLVLCqbRs6E063eYdF0658w&key=AIzaSyCgN_GdkQ2XDt6SqU6fB_d03l2PvWsSbq4`;
     const response = await fetch(url);
     const data = await response.json();
     const count = data.items[0].statistics.subscriberCount;
