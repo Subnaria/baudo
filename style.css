@@ -338,3 +338,55 @@ footer a {
   font-family: inherit;
   transition: color 0.3s;
 }
+
+#intro-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: #0d0d0d;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.45s cubic-bezier(.77,0,.18,1);
+  display: block;
+}
+
+#intro-flash {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, transparent 40%, #00ccff 60%, transparent 80%);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100vw) skewX(-20deg);
+}
+
+body.animating #intro-flash {
+  animation: flashScan 0.5s 0.15s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+@keyframes flashScan {
+  0% { opacity: 0; transform: translateX(-100vw) skewX(-20deg);}
+  10% { opacity: 0.7; }
+  60% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(100vw) skewX(-20deg);}
+}
+
+.hero, .content {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
+  transition: opacity 0.22s cubic-bezier(.77,0,.18,1), transform 0.22s cubic-bezier(.77,0,.18,1);
+  will-change: opacity, transform;
+}
+
+body.ready .hero {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition-delay: 0.10s;
+}
+
+body.ready .content {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition-delay: 0.18s;
+}
