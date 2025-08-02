@@ -299,7 +299,7 @@ footer a {
 .social-link-card.fade-in-link:nth-child(7) { animation-delay: 1.7s; }
 .social-link-card.fade-in-link:nth-child(8) { animation-delay: 1.9s; }
 .social-link-card.fade-in-link:nth-child(9) { animation-delay: 2.1s; }
-.social-link-card.fade-in-link:nth-child(10) { animation-delay: 2.2s; }
+.social-link-card.fade-in-link:nth-child(10) { animation-delay: 2.3s; }
 .social-link-card.fade-in-link:nth-child(11) { animation-delay: 2.4s; }
 
 @keyframes fadeInLink {
