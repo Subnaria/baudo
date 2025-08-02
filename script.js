@@ -1,15 +1,20 @@
-// Animation d'apparition au chargement
+// Animation d'arrivée originale et punchy
 window.addEventListener('DOMContentLoaded', () => {
-  // Apparition du contenu principal après un court délai
+  document.body.classList.add('animating');
+  // Lance le flash (animation CSS via .animating)
   setTimeout(() => {
-    const content = document.querySelector('.content');
-    content.style.opacity = '1';
-    content.style.transform = 'translateY(0)';
-    // Animation différée pour les liens
-    document.querySelectorAll('.fade-in-link').forEach(el => {
-      el.style.animationPlayState = 'running';
-    });
-  }, 600);
+    document.getElementById('intro-overlay').style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('intro-overlay').style.display = 'none';
+      document.body.classList.remove('animating');
+      document.body.classList.add('ready');
+      // Lance les animations différées pour les liens
+      document.querySelectorAll('.fade-in-link').forEach(el => {
+        el.style.animationPlayState = 'running';
+      });
+    }, 250); // <-- plus rapide qu'avant
+  }, 400); // <-- plus rapide qu'avant
+
   hackerEffect();
   const subCount = document.getElementById('sub-count');
   if (subCount) {
