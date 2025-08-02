@@ -16,10 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 400); // <-- plus rapide qu'avant
 
   hackerEffect();
-  const subCount = document.getElementById('sub-count');
-  if (subCount) {
-    subCount.textContent = "Abonnés : 35.5K";
-  }
+  updateSubCount();
   animateAboutMessage();
 });
 
@@ -126,6 +123,29 @@ function animateAboutMessage() {
     });
   }, 3000);
 }
+
+// Fonction pour mettre à jour le compteur d'abonnés
+function updateSubCount() {
+  fetch('https://socialcounts.org/youtube-live-subscriber-count/UCLVLCqbRs6E063eYdF0658w')
+    .then(res => res.json())
+    .then(data => {
+      const subCount = document.getElementById('sub-count');
+      if (subCount && data && data.data && data.data.subscriberCount) {
+        subCount.textContent = "Abonnés : " + data.data.subscriberCount.toLocaleString('fr-FR');
+      } else {
+        subCount.textContent = "Abonnés : (erreur API)";
+        console.log('API data:', data);
+      }
+    })
+    .catch(err => {
+      const subCount = document.getElementById('sub-count');
+      subCount.textContent = "Abonnés : (erreur réseau)";
+      console.error('Erreur API:', err);
+    });
+}
+
+updateSubCount();
+setInterval(updateSubCount, 120000);
 
 // Anti-vol d'image : bloque le clic droit sur les images
 document.addEventListener('contextmenu', function(e) {
