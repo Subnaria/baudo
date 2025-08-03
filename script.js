@@ -145,7 +145,8 @@ function updateSubCount() {
 }
 
 updateSubCount();
-setInterval(updateSubCount, 120000);
+setInterval(updateSubCount, 120000); // toutes les 2 minutes
+
 
 // Anti-vol d'image : bloque le clic droit sur les images
 document.addEventListener('contextmenu', function(e) {
@@ -155,6 +156,6 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 console.log(
-  "%cAttention : Toute tentative d'attaque ou de vol de contenu sera signalée.",
+  "%cAttention : Toute tentative d'attaque ou de vol de contenu sera ENREGISTRÉE DANS NOS LOGS!!!",
   "color: #00ccff; font-size: 1.2em;"
 );
