@@ -84,46 +84,6 @@ function hackerEffect() {
   writeNextLetter();
 }
 
-// Animation du message à propos
-const aboutMsg = document.getElementById('about-message');
-const baseMsg = "à méditer";
-const altMsg = "Dax a infecté le site de Baudo ! attention à toi !";
-const charsMsg = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?<>-_";
-let aboutMsgInterval = null;
-
-function hackerAboutMessage(targetMsg, callback) {
-  let progress = 0;
-  let display = Array(targetMsg.length).fill("");
-  clearInterval(aboutMsgInterval);
-
-  aboutMsgInterval = setInterval(() => {
-    for (let i = 0; i < targetMsg.length; i++) {
-      if (i < progress) {
-        display[i] = targetMsg[i];
-      } else {
-        display[i] = charsMsg[Math.floor(Math.random() * charsMsg.length)];
-      }
-    }
-    aboutMsg.textContent = display.join("");
-    if (progress <= targetMsg.length) {
-      progress++;
-    } else {
-      clearInterval(aboutMsgInterval);
-      if (callback) setTimeout(callback, 1800);
-    }
-  }, 45);
-}
-
-function animateAboutMessage() {
-  setTimeout(() => {
-    hackerAboutMessage(altMsg, () => {
-      setTimeout(() => {
-        hackerAboutMessage(baseMsg, animateAboutMessage);
-      }, 3000);
-    });
-  }, 3000);
-}
-
 // Fonction pour mettre à jour le compteur d'abonnés
 function updateSubCount() {
   fetch('https://baudo-compt-abo.onrender.com/api/subscribers')
@@ -147,6 +107,20 @@ function updateSubCount() {
 updateSubCount();
 setInterval(updateSubCount, 120000); // toutes les 2 minutes
 
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".scroll-reveal").forEach(el => {
+    observer.observe(el);
+  });
+});
 
 // Anti-vol d'image : bloque le clic droit sur les images
 document.addEventListener('contextmenu', function(e) {
