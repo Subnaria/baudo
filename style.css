@@ -270,8 +270,8 @@ footer {
 }
 
 .social-link-card:hover {
-  background-color: #aee9f8;
-  color: #1a1a1a;
+  background-color: #1a1a1a;
+  color: #aee9f8;
   transform: scale(0,2);
 
 }
@@ -313,8 +313,8 @@ footer {
 }
 
 .contact-card:hover {
-  background: #aee9f8;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  color: #aee9f8;
   transform: scale(1.04);
 }
 
