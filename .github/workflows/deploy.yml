@@ -1,0 +1,35 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+      - main   # se lance quand tu pousses sur la branche main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupère ton code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Installe Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. Crée le fichier .env avec tes secrets GitHub
+      - name: Create .env file
+        run: |
+          echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}" >> .env
+          echo "CHANNEL_ID=${{ secrets.CHANNEL_ID }}" >> .env
+
+      # 4. Installe tes dépendances
+      - name: Install dependencies
+        run: npm install
+
+      # 5. (optionnel) Lancer un build si besoin
+      - name: Build
+        run: npm run build --if-present
