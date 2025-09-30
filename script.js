@@ -84,25 +84,21 @@ function hackerEffect() {
   writeNextLetter();
 }
 
-// Fonction pour mettre à jour le compteur d'abonnés
-function updateSubCount() {
-  fetch('https://baudo-compt-abo.onrender.com/api/subscribers')
-    .then(res => res.json())
-    .then(data => {
-      const subCount = document.getElementById('sub-count');
-      if (subCount && data && data.subscriberCount) {
-        subCount.textContent = "Abonnés : " + Number(data.subscriberCount).toLocaleString('fr-FR');
-      } else {
-        subCount.textContent = "Abonnés : (erreur API)";
-        console.log('API data:', data);
-      }
-    })
-    .catch(err => {
-      const subCount = document.getElementById('sub-count');
-      subCount.textContent = "Abonnés : (erreur réseau)";
-      console.error('Erreur API:', err);
-    });
-}
+fetch('/api/subscribers')
+  .then(res => res.json())
+  .then(data => {
+    const subCount = document.getElementById('sub-count');
+    if (subCount && typeof data.subscriberCount !== 'undefined') {
+      subCount.textContent = "Abonnés : " + Number(data.subscriberCount).toLocaleString('fr-FR');
+    } else {
+      subCount.textContent = "Abonnés : (erreur API)";
+    }
+  })
+  .catch(err => {
+    document.getElementById('sub-count').textContent = "Abonnés : (erreur réseau)";
+    console.error(err);
+  });
+
 
 updateSubCount();
 setInterval(updateSubCount, 120000); // toutes les 2 minutes
