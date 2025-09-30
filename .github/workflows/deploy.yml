@@ -3,33 +3,23 @@ name: Deploy Backend
 on:
   push:
     branches:
-      - main   # se lance quand tu pousses sur la branche main
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Récupère ton code
+      # 1. Récupère le code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Installe Node
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      # 2. Installe Wrangler
+      - name: Install Wrangler
+        run: npm install -g wrangler
 
-      # 3. Crée le fichier .env avec tes secrets GitHub
-      - name: Create .env file
-        run: |
-          echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}" >> .env
-          echo "CHANNEL_ID=${{ secrets.CHANNEL_ID }}" >> .env
-
-      # 4. Installe tes dépendances
-      - name: Install dependencies
-        run: npm install
-
-      # 5. (optionnel) Lancer un build si besoin
-      - name: Build
-        run: npm run build --if-present
+      # 3. Déploie le Worker avec le CF_API_TOKEN
+      - name: Deploy Worker
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: wrangler deploy
