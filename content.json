@@ -1,0 +1,35 @@
+{
+  "brand": {
+    "title": "BAUDO",
+    "subtitle": "Game Dev & fun !",
+    "banner": "img/baudo-banners.jpg",
+    "profile": "img/baudo-pdp.jpg",
+    "about": {
+      "paragraphs": [
+        "Juste un <span style=\"color:#00bcd4;\">gars</span> qui <span style=\"color:#00bcd4;\">joue à créer des jeux vidéo</span> 🕹️ (<span id=\"about-message\">à méditer</span>)",
+        "<span style=\"color:#e0f7fa;\">Retrouvez Baudo</span>, aussi <span style=\"color:#e0f7fa;\">connu</span> sous les pseudos <span style=\"color:#00bcd4;\">DevBaudo</span> et <span style=\"color:#00bcd4;\">Zbaudo</span>, sur toutes les <span style=\"color:#e0f7fa;\">plateformes</span> !",
+        "Découvrez ses <span style=\"color:#00bcd4;\">jeux</span>, ses <span style=\"color:#00bcd4;\">vidéos</span> et sa <span style=\"color:#00bcd4;\">communauté</span>."
+      ]
+    }
+  },
+  "contact": [
+    { "label": "Baudo - Chaîne Principale", "url": "https://www.youtube.com/@Dev_Baudo", "icon": "img/youtube.png" },
+    { "label": "Le Baudo Crew (Discord)", "url": "https://discord.com/invite/TxJNqvAV5e", "icon": "img/discord.png" },
+    { "label": "Collab pro : Baudo@stan-agency.com", "url": "mailto:Baudo@stan-agency.com", "icon": "img/e-mail.png" }
+  ],
+  "social": [
+    { "label": "Zbaudo - Chaîne Secondaire", "url": "https://www.youtube.com/@Zbaudo", "icon": "img/youtube.png" },
+    { "label": "Instagram", "url": "https://www.instagram.com/dev_baudo/", "icon": "img/instagram.png" },
+    { "label": "TikTok", "url": "https://www.tiktok.com/@dev_baudo", "icon": "img/tiktok.png" },
+    { "label": "Twitch", "url": "https://www.twitch.tv/devbaudo", "icon": "img/twitch.png" }
+  ],
+  "games": [
+    { "label": "Baudo - itch.io", "url": "https://dev-baudo.itch.io/", "icon": "img/itch-io.png" },
+    { "label": "Lethal room - Android", "url": "https://play.google.com/store/apps/details?id=com.baudo.lethalroom&pli=1", "icon": "img/lethal-room.webp" },
+    { "label": "Lethal room - IOS", "url": "https://apps.apple.com/us/app/lethal-room/id6740019326", "icon": "img/lethal-ios.png" },
+    { "label": "Infinite Climb - Android", "url": "https://play.google.com/store/apps/details?id=com.InfiniteClimb.monoapplication", "icon": "img/infinit-climb.webp" },
+    { "label": "Infinite Climb - IOS", "url": "https://apps.apple.com/us/app/infinite-climb/id6478911448", "icon": "img/infinite-ios.png" },
+    { "label": "Boom Bouga", "url": "https://dev-baudo.itch.io/boom-bouga", "icon": "img/boom-bouga.png" },
+    { "label": "Waffle Games", "url": "https://dev-baudo.itch.io/waffle-games-a-lethal-room-experience", "icon": "img/waffle-game.png" }
+  ]
+}
