@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BAUDO - Un gars Chill</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/gif" href="img/normal icon/baudo-pp.png"/>
+  <link rel="icon" type="image/gif" href="img/normal icon/baudo-site.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <meta name="description" content="Baudo, alias DevBaudo et Zbaudo, créateur de jeux vidéo indépendant. Découvrez ses projets, réseaux, jeux Android/iOS et contactez-le facilement. Dax est aussi de la partie !" />
   <meta name="keywords" content="Baudo, DevBaudo, Zbaudo, Dax, jeux vidéo, développeur, Android, iOS, Twitch, YouTube, Discord, TikTok, Instagram, itch.io, Infinite Climb, Lethal Room" />
@@ -21,19 +21,23 @@
     <div id="intro-flash"></div>
   </div>
   <header class="hero">
+    <!-- keep the existing img.banner as a fallback, background is controlled by CSS -->
     <img src="img/normal icon/baudo-banners.jpg" alt="Bannière Baudo" class="banner">
-    <img src="img/normal icon/baudo-pdp.jpg" alt="Photo de profil Baudo" class="profile-pic">
-    <h1 class="title" id="hacker-title"></h1>
-    <p class="subtitle">Game Dev & fun !</p>
-    <p id="sub-count" class="sub-count">Abonnés : ...</p>
-    <br>
-    <div class="subscribe-container">
-      <a href="https://www.youtube.com/@Dev_Baudo" target="_blank" class="btn" id="subscribe-btn">S'Abonner ! </a>
-      <div class="subscribe-gif">
-        <img src="img/normal icon/Sprite-0001.gif" alt="Petit personnage qui appuie" />
-      </div>
-      <div class="subscribe-gif-right">
-        <img src="img/normal icon/baudo.idle.gif" alt="Petit personnage qui appuie" />
+    <!-- new background layer for interactive parallax blur/motion -->
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-card">
+        <img src="img/normal icon/baudo-pdp.jpg" alt="Photo de profil Baudo" class="profile-pic">
+        <h1 class="title" id="hacker-title"></h1>
+        <p class="subtitle">Game Dev & fun !</p>
+        <p id="sub-count" class="sub-count">Abonnés : ...</p>
+        <br>
+        <div class="subscribe-container">
+          <a href="https://www.youtube.com/@Dev_Baudo" target="_blank" class="btn" id="subscribe-btn">S'Abonner ! </a>
+          <div class="subscribe-gif-right">
+            <img src="img/normal icon/baudo.idle.gif" alt="Petit personnage qui appuie" />
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -50,23 +54,21 @@
       </p>
       <br>
       <p>Découvrez ses <span id="light">jeux</span>, ses <span id="light">vidéos</span> et sa <span id="light">communauté</span>.</p>
-
-      <p><span id="light">🎃HAPPY HALLOWEEN !!🎃</span></p>
     </section>
 
     <section class="contact">
       <h2>Me Contacter</h2>
       <div class="contact-list">
         <a href="https://www.youtube.com/@Dev_Baudo" target="_blank" class="contact-card fade-in-link">
-          <img src="img/Halloween icon/youtube-hallowen.png" alt="youtube icon" class="contact-logo">
+          <img src="img/normal icon/youtube.png" alt="youtube icon" class="contact-logo">
           <span>Baudo - Chaîne Principale</span>
         </a>
         <a href="https://discord.com/invite/TxJNqvAV5e" target="_blank" class="contact-card fade-in-link">
-          <img src="img/Halloween icon/discord-halloween.png" alt="Discord icon" class="contact-logo">
+          <img src="img/normal icon/discord.png" alt="Discord icon" class="contact-logo">
           <span>Le Baudo Crew (Discord)</span>
         </a>
         <a href="mailto:Baudo@stan-agency.com" class="contact-card fade-in-link">
-          <img src="img/Halloween icon/e-mail-halloween.png" alt="mail pro icon" class="contact-logo">
+          <img src="img/normal icon/e-mail.png" alt="mail pro icon" class="contact-logo">
           <span>Envie de collaborer avec moi ? : </span>
           <span>Baudo@stan-agency.com</span>
         </a>
@@ -77,19 +79,19 @@
       <h2>Mes Réseaux</h2>
       <div class="social-links-list">
         <a href="https://www.youtube.com/@Zbaudo" target="_blank" class="social-link-card fade-in-link">
-          <img src="img/Halloween icon/youtube-hallowen.png" alt="Chaîne Secondaire icon" class="social-logo">
+          <img src="img/normal icon/youtube.png" alt="Chaîne Secondaire icon" class="social-logo">
           <span>Zbaudo - Chaîne Secondaire</span>
         </a>
         <a href="https://www.instagram.com/dev_baudo/" target="_blank" class="social-link-card fade-in-link">
-          <img src="img/Halloween icon/instagram-halloween.png" alt="Instagram icon" class="social-logo">
+          <img src="img/normal icon/instagram.png" alt="Instagram icon" class="social-logo">
           <span>Instagram</span>
         </a>
         <a href="https://www.tiktok.com/@dev_baudo" target="_blank" class="social-link-card fade-in-link">
-          <img src="img/Halloween icon/tiktok-halloween.png" alt="TikTok icon" class="social-logo">
+          <img src="img/normal icon/tiktok.png" alt="TikTok icon" class="social-logo">
           <span>TikTok</span>
         </a>
         <a href="https://www.twitch.tv/devbaudo" target="_blank" class="social-link-card fade-in-link">
-          <img src="img/Halloween icon/twitch-halloween.png" alt="Twitch icon" class="social-logo">
+          <img src="img/normal icon/twitch.png" alt="Twitch icon" class="social-logo">
           <span>Twitch</span>
         </a>
       </div>
@@ -136,10 +138,15 @@
   </main>
 
   <footer>
-    <p>© 2025 Baudo - Tous droits réservés. Crée avec ❤️ par <a id="pub" href="https://cscpacman.fr/">csc.pacman</a></p>
+      <p>© 2025 Baudo - Tous droits réservés. Créé avec ❤️ par 
+        <a id="pub" href="https://cscpacman.fr/">csc.pacman</a>
+      </p>
+      <div class="cheat-box">
+        <input type="text" id="cheatInput" placeholder="Entrer un cheat code..." />
+      </div>
   </footer>
-
   <script src="script.js"></script>
+  <script src="Script/cheats.js"></script>
 </body>
 </html>
 
