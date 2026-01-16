@@ -1,4 +1,3 @@
-window.location.href = "https://maintenance.cscpacman.fr/";
 // ============================
 // Snowfall Animation - Délire Noël! 🎄❄️
 // ============================
@@ -323,4 +322,5 @@ console.log(
   "%c By csc.pacman 🚀  ",
   "color: #ff9b3dff; font-size: 1em;"
 );
+
 
